@@ -1,86 +1,154 @@
-/*
-html {
-  align-items: flex-start;
-  display: flex;
-  font: 22px "Courier New", Courier, monospace;
-  height: 100%;
-  justify-content: center;
-  margin: 0;
-}
-*/
-
 
 body {
-    /*Legacy Browsers*/
+    /* legacy browser*/
     background: #424B56;
-    text-decoration-color: #666661;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    /* newer browser, add a gradient effect*/
+    background: linear-gradient(119deg, #2e3440, #4c566a);
+    font-family: Roboto, Arial, monospace;
     display: flex;
-    min-height: 100vh;
-    justify-content: flex-start;
-    border-bottom-width: 4px;
-    text-align: justify;
+    flex-direction: column;
+    line-height: 1.3;
+    color: #d8dee9
 }
 
-
-main {
-    align-self: flex-start;
-}
-
-projects {
-    align-self: center
-}
-
-.content-container{
-	position: absolute;
-	top: 37%;
-	left: 53.5%;
-	transform: translate(-50%, -50%);
-}
-
-.content{
-	position: flex;
-}
-
-.links{display: none;}
-.links:hover
-
-.icons{
-	display: flex; 
-	flex-direction: column;
-	justify-content: center;
-    margin: 25px 40px;
-    flex-direction: row;
-    align-content: flex-start;
-}
-.container{
-	width: 65px;
-	height: 65px;
-	margin: 15px;
-}
-
-.container img{
-    width: 100%;
-    height: auto;
-	opacity: .5;
-}
-
-img:hover{
-	opacity: .7;
-}
-
-.items, a{
+header {
     display: flex;
+    flex: 1 1 0;
+    justify-content: space-between;
+    align-self: right;
+    /* legacy browser*/
+    background: #2e3440;
+     /* newer browser, gradient effect to complement existing*/
+     background: linear-gradient(241deg, #2e3440, #4c566a);
+    color: #bf616a;
+    display: inline;
+}
+
+/* Will make a smallish avatar and place it left */
+header img {
+    height: 250px;
+    width: auto;
+    float: left;
+}
+
+h1 {
+    font-size: 275%;
+}
+
+h2 {
+    font-size: 175%;
+    margin: 2% 0;
+}
+
+/* Will place my contact details at top right */
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    min-width: 300px;
+}
+
+nav a {
+    color: #a3be8c;
+    font-weight: bold
+}
+
+nav a:hover {
+    color: #b48ead
+}
+
+header h2{
+    text-align: center;
+
+}
+article {
+    display: flex;
+    flex: 1 1 0;
+    max-width: 1200px;
+    margin: 2% auto;
+}
+
+article p {
+    margin: 2% 0;
+    font-size: 110%;
+    color: #de966d;
+}
+
+section {
+    flex: 1 1 0;
+    padding-right: 5%;
+}
+
+/* Removes underline*/
+section a {
     text-decoration: none;
+}
 
+.projects {
+    padding:50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-.items{
-	list-style: none;
+
+
+.projectContainer {
+    display: inline;
+    vertical-align: middle;
+    position: relative;
 }
+
+.projectHighlight {
+    display: inline;
+    vertical-align: middle;
+    position: relative;
+}
+
+.projectContainer img{
+    height: 400px;
+    width: 300px;
+}
+
+/*Highlighted Projects can be made larger amongst other things */
+.projectHighlight img {
+    height: 700px;
+    width: 400px;
+}
+
+.subheading {
+    color: #d8dee9;
+    font-weight: bold;
+    font-size: 110%;  
+}
+
+.byheading {
+    font-style: italic;
+    font-size: 90%;
+}
+
 
 footer {
+    display: flex;
     align-self: flex-end
 }
+/*Resizes the main header when screen is smaller than 768px */
+@media screen and (max-width: 768px) {
+    header,
+    article {
+        width: 700px;
+    }
+}
+/*Resizes the main header when screen is smaller than 400px */
+@media screen and (max-width: 400px) {
+    header,
+    article {
+        max-width: 300px;
+    }
 
+    header img {
+        height: 100px;
+        width: auto;
+        float: left;
+    }
+}
 
